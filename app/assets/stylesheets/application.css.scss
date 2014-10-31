@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+$font-family-sans-serif:'Lato', 'Helvetica Neue', Helvetica;
+
+$body-bg: 													#bdc3c7;
+$font-family-sans-serif:						'Lato', 'Helvetica Neue', Helvetica;
+$navbar-default-bg: 								#ecf0f1;
+$navbar-default-link-color: 				#c0392b;
+$navbar-default-link-hover-color: 	#1abc9c;
+$brand-primary: 										#c0392b;
+$btn-default-bg:										#bdc3c7;
+
+@import 'bootstrap';
+
+.tasks {
+	text-align: left;
+	padding-left: 20px;
+	border-left: 20px;
+}
