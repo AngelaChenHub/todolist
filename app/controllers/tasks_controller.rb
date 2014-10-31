@@ -4,6 +4,16 @@ class TasksController < ApplicationController
     render :partial => 'index'
   end
 
+def archive
+  @task = Task.find(params[:id])
+  @task.archived = 1
+  if @task.save
+      render json: {:success =>  true, :task => @task}
+  else
+    render json: {:success => false}
+  end
+end
+
   def update
   end
 
@@ -26,15 +36,5 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:title, :description, :archived, :priority)
-  end
-end
-
-def archive
-  @task = Task.find(params[:id])
-  @task.archived = 1
-  if @task.save
-      render json: {:success =>  true, :task => @task}
-  else
-    render json: {:success => false}
   end
 end
